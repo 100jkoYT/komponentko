@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servis računalnikov | Komponentko</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ================= THEME VARIABLES ================= */
+
+:root{
+--bg1:#f8fafc;
+--bg2:#eef2f6;
+
+--text:#1e293b;
+--text-soft:#334155;
+
+--card:white;
+
+--accent:#89C541;
+}
+
+body.dark{
+--bg1:#0f1115;
+--bg2:#07080a;
+
+--text:#e5e7eb;
+--text-soft:#cbd5e1;
+
+--card:#14161a;
+}
+
+/* ================= GLOBAL ================= */
+
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+color:var(--text);
+line-height:1.7;
+transition:background .3s ease,color .3s ease;
+}
+
+.container{
+max-width:1100px;
+margin:0 auto;
+padding:0 20px;
+}
+
+/* ================= THEME BUTTON ================= */
+
+.theme-btn{
+position:fixed;
+top:25px;
+right:25px;
+
+background:#111;
+color:white;
+
+border:none;
+padding:12px 18px;
+border-radius:40px;
+
+cursor:pointer;
+font-size:16px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+
+transition:.3s;
+z-index:999;
+}
+
+body.dark .theme-btn{
+background:#e5e7eb;
+color:#111;
+}
+
+/* ================= HOME BUTTON ================= */
+
+.home-btn{
+display:inline-block;
+margin:30px 0 40px;
+padding:14px 32px;
+background:#89C541;
+color:white;
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+transition:all .3s ease;
+box-shadow:0 6px 20px rgba(137,197,65,.25);
+font-size:1.1rem;
+}
+
+.home-btn:hover{
+background:#6f932e;
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(137,197,65,.35);
+}
+
+/* ================= HEADER ================= */
+
+header{
+text-align:center;
+padding:80px 20px 60px;
+background:linear-gradient(to bottom,rgba(137,197,65,.08),transparent);
+}
+
+h1{
+font-size:clamp(2.4rem,6vw,3.8rem);
+font-weight:900;
+color:#89C541;
+margin-bottom:.8rem;
+opacity:0;
+transform:translateY(40px);
+animation:fadeInUp 1.2s forwards;
+}
+
+.subtitle{
+font-size:1.3rem;
+color:#64748b;
+max-width:700px;
+margin:0 auto 2rem;
+opacity:0;
+transform:translateY(40px);
+animation:fadeInUp 1.2s forwards .3s;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+margin:60px 0;
+opacity:0;
+transform:translateY(40px);
+animation:fadeInUp 1.2s forwards;
+}
+
+section:nth-child(odd){animation-delay:.4s;}
+section:nth-child(even){animation-delay:.6s;}
+
+h2{
+font-size:1.9rem;
+color:var(--text);
+margin-bottom:1.2rem;
+position:relative;
+display:inline-block;
+}
+
+h2::after{
+content:'';
+position:absolute;
+bottom:-8px;
+left:0;
+width:60px;
+height:4px;
+background:#89C541;
+border-radius:2px;
+}
+
+p{
+font-size:1.1rem;
+color:var(--text-soft);
+margin-bottom:1.6rem;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+background:rgba(137,197,65,.08);
+padding:28px;
+border-radius:16px;
+border-left:5px solid #89C541;
+margin:2rem 0;
+}
+
+/* ================= CONTACT BOX ================= */
+
+.contact-section{
+text-align:center;
+margin:80px 0 100px;
+padding:50px 30px;
+background:var(--card);
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.contact-btn{
+display:inline-block;
+padding:16px 40px;
+background:#89C541;
+color:white;
+font-size:1.2rem;
+font-weight:700;
+text-decoration:none;
+border-radius:50px;
+transition:all .3s ease;
+box-shadow:0 8px 25px rgba(137,197,65,.3);
+}
+
+.contact-btn:hover{
+background:#6f932e;
+transform:translateY(-4px);
+box-shadow:0 16px 40px rgba(137,197,65,.4);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:40px 20px;
+color:#64748b;
+font-size:.95rem;
+border-top:1px solid #e2e8f0;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeInUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+h1{font-size:2.6rem;}
+h2{font-size:1.7rem;}
+
+.container{padding:0 15px;}
+
+.contact-btn{
+padding:14px 32px;
+font-size:1.1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<button id="themeToggle" class="theme-btn">🌙</button>
+
+<div class="container">
+
+<a href="domov.html" class="home-btn">← Domov</a>
+
+<header>
+<h1>Servis računalnikov</h1>
+<p class="subtitle">Hitro, strokovno in zanesljivo – vaš računalnik spet deluje kot nov.</p>
+</header>
+
+<section>
+<p>
+Računalnik, ki se nenadoma upočasni, preneha delovati ali preprosto ne dela tako, kot bi moral, lahko hitro pokvari dan.
+</p>
+
+<p>
+Pri Komponentku smo specializirani za servisiranje vseh vrst računalnikov, prenosnikov in računalniške opreme.
+</p>
+</section>
+
+<section>
+<h2>Servis računalnikov: diagnostika in popravilo</h2>
+<p>
+Vaš računalnik ne deluje tako, kot bi moral? Pri Komponentku hitro ugotovimo vzrok težave in poskrbimo za strokovno popravilo.
+</p>
+</section>
+
+<section>
+<h2>Nadgradnja računalnika: povečajte svojo zmogljivost</h2>
+<p>
+Če je vaš računalnik počasen, mu lahko vdihnemo novo življenje z nadgradnjo komponent.
+</p>
+</section>
+
+<section>
+<h2>Odstranjevanje virusov: zaščitite svoj digitalni svet</h2>
+<p>
+Virusi in zlonamerna programska oprema lahko povzročijo izgubo podatkov ali upočasnitev sistema.
+</p>
+</section>
+
+<section>
+<h2>Namestitev operacijskega sistema: nov začetek za vaš računalnik</h2>
+<p>
+Sveža namestitev operacijskega sistema je pogosto najboljša rešitev za počasne ali nestabilne računalnike.
+</p>
+</section>
+
+<div class="contact-section">
+
+<h2>Potrebujete servis računalnika?</h2>
+
+<p>Pišite nam ali nas pokličite in se dogovorimo za obisk – hitro in brez zapletov.</p>
+
+<a href="mailto:info@komponentko.si" class="contact-btn">
+info@komponentko.si
+</a>
+
+<br><br>
+
+<a href="domov.html" class="home-btn">
+Nazaj na domov
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* ================= THEME SWITCH ================= */
+
+const toggle = document.getElementById('themeToggle');
+
+if(localStorage.getItem('theme') === 'dark'){
+document.body.classList.add('dark');
+}
+
+toggle.addEventListener('click',()=>{
+
+document.body.classList.toggle('dark');
+
+localStorage.setItem(
+'theme',
+document.body.classList.contains('dark') ? 'dark' : 'light'
+);
+
+});
+
+</script>
+
+</body>
+</html>

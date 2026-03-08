@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reševanje podatkov | Komponentko</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ================= THEME VARIABLES ================= */
+
+:root{
+--bg1:#f4f7f2;
+--bg2:#e9f5dc;
+
+--text:#162330;
+--card:white;
+
+--accent:#89C541;
+}
+
+body.dark{
+--bg1:#0f1115;
+--bg2:#07080a;
+
+--text:#e5e7eb;
+--card:#14161a;
+}
+
+/* ================= GLOBAL ================= */
+
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+color:var(--text);
+line-height:1.7;
+padding:0 20px;
+transition:background .3s ease,color .3s ease;
+}
+
+.container{
+max-width:900px;
+margin:0 auto;
+padding:40px 20px;
+}
+
+/* ================= THEME BUTTON ================= */
+
+.theme-btn{
+position:fixed;
+top:25px;
+right:25px;
+
+background:#111;
+color:white;
+
+border:none;
+padding:12px 18px;
+border-radius:40px;
+
+cursor:pointer;
+font-size:16px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+
+transition:.3s;
+z-index:999;
+}
+
+body.dark .theme-btn{
+background:#e5e7eb;
+color:#111;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn{
+display:inline-block;
+margin:20px 0;
+padding:12px 28px;
+background:#89C541;
+color:white;
+font-weight:700;
+text-decoration:none;
+border-radius:50px;
+transition:all .3s ease;
+box-shadow:0 4px 12px rgba(137,197,65,.3);
+}
+
+.back-btn:hover{
+background:#6f932e;
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(137,197,65,.4);
+}
+
+/* ================= HEADINGS ================= */
+
+h1{
+font-size:2.8rem;
+color:#89C541;
+margin-bottom:1.5rem;
+text-align:center;
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1s forwards .3s;
+}
+
+h2{
+font-size:1.9rem;
+color:var(--text);
+margin:2.5rem 0 1rem;
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1s forwards;
+}
+
+/* ================= TEXT ================= */
+
+p,ul{
+font-size:1.1rem;
+margin-bottom:1.5rem;
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1s forwards .5s;
+}
+
+ul{
+list-style:none;
+padding-left:0;
+}
+
+ul li{
+margin-bottom:1rem;
+padding-left:1.8rem;
+position:relative;
+}
+
+ul li::before{
+content:"→";
+position:absolute;
+left:0;
+color:#89C541;
+font-weight:bold;
+}
+
+/* ================= POSTOPEK BOX ================= */
+
+.postopek{
+background:var(--card);
+padding:30px;
+border-radius:16px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+margin:2.5rem 0;
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1s forwards .8s;
+}
+
+.postopek ol{
+padding-left:1.5rem;
+counter-reset:step;
+}
+
+.postopek li{
+margin-bottom:1.5rem;
+position:relative;
+padding-left:2.5rem;
+}
+
+.postopek li::before{
+content:counter(step);
+counter-increment:step;
+position:absolute;
+left:0;
+top:0;
+background:#89C541;
+color:white;
+width:32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+font-size:1.1rem;
+}
+
+.center-btn{
+text-align:center;
+margin:3rem 0;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeInUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+h1{font-size:2.4rem;}
+h2{font-size:1.7rem;}
+
+.container{
+padding:30px 15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<button id="themeToggle" class="theme-btn">🌙</button>
+
+<div class="container">
+
+<a href="domov.html" class="back-btn">← Domov</a>
+
+<h1>Reševanje podatkov</h1>
+
+<p>
+V današnji digitalni dobi so naši podatki – fotografije, dokumenti, projekti ali poslovni podatki – zelo dragoceni. Ko pride do izpada trdega diska, okvare SSD-ja, nepričakovanega brisanja ali poškodbe sistema, lahko izguba teh podatkov pomeni veliko stresno situacijo.
+</p>
+
+<p>
+Pri Komponentku smo razvili izjemne sposobnosti na področju reševanja podatkov. Naša ekipa strokovnjakov redno obnavlja podatke iz različnih medijev z visoko stopnjo uspešnosti.
+</p>
+
+<h2>Obnovitev trdih diskov (HDD)</h2>
+
+<p>
+Trdi diski so najbolj občutljivi na mehanske okvare, kot so okvare motorčka, bralnih glav ali poškodbe površine plošč.
+</p>
+
+<h2>Obnovitev SSD diskov</h2>
+
+<p>
+SSD-ji so hitri in zanesljivi, vendar lahko okvara krmilnika ali nenadna izguba napajanja povzroči izgubo podatkov.
+</p>
+
+<h2>Reševanje podatkov z računalnika</h2>
+
+<p>
+USB ključki so majhni in priročni, a zato tudi pogosto izpostavljeni mehanskim poškodbam in korupciji podatkov.
+</p>
+
+<h2>Reševanje podatkov s telefona</h2>
+
+<p>
+Izguba podatkov na telefonu je lahko zelo neprijetna, saj na njem pogosto hranimo osebne slike, kontakte in sporočila.
+</p>
+
+<h2>Reševanje podatkov z USB ključka</h2>
+
+<p>
+Ko računalnik ali prenosnik preneha delovati, ni nujno, da so podatki izgubljeni.
+</p>
+
+<div class="postopek">
+
+<h2>Postopek reševanja podatkov pri Komponentku</h2>
+
+<p>
+Ko pride do izgube podatkov, je pomembno, da se zavedate tveganj, ki jih prinašajo samostojni poskusi obnovitve.
+</p>
+
+<ol>
+
+<li><strong>Pošljite ali dostavite napravo</strong> – Ko opazite izgubo podatkov, lahko napravo enostavno pošljete ali dostavite v našo poslovalnico.</li>
+
+<li><strong>Diagnostika</strong> – Naši strokovnjaki izvedejo diagnostiko naprave in določijo najboljšo metodo za obnovitev.</li>
+
+<li><strong>Določitev stroška</strong> – Stranka popravilo dokončno odobri.</li>
+
+<li><strong>Obnova podatkov</strong> – Po potrditvi začnemo z reševanjem podatkov.</li>
+
+<li><strong>Vračilo podatkov</strong> – Ko je reševanje uspešno izvedeno, pripravimo podatke na prenos.</li>
+
+<li><strong>Trajanje</strong> – Celoten postopek traja približno 3–7 delovnih dni.</li>
+
+</ol>
+
+</div>
+
+<div class="center-btn">
+<a href="domov.html" class="back-btn">Nazaj na domov</a>
+</div>
+
+</div>
+
+<script>
+
+/* ================= THEME SWITCH ================= */
+
+const toggle = document.getElementById('themeToggle');
+
+if(localStorage.getItem('theme') === 'dark'){
+document.body.classList.add('dark');
+}
+
+toggle.addEventListener('click',()=>{
+
+document.body.classList.toggle('dark');
+
+localStorage.setItem(
+'theme',
+document.body.classList.contains('dark') ? 'dark' : 'light'
+);
+
+});
+
+</script>
+
+</body>
+</html>
